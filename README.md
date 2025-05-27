@@ -16,4 +16,4 @@
 ### 6. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
 
 
-### 5. How can you calculate aggregate functions like COUNT(), SUM(), and AVG() in PostgreSQL?
+### 7. How can you calculate aggregate functions like COUNT(), SUM(), and AVG() in PostgreSQL?

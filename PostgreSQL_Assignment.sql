@@ -31,6 +31,7 @@ CREATE TABLE sightings (
 )
 
 drop Table species;
+drop Table rangers;
 drop Table sightings;
 
 -- Insert data into rangers
@@ -78,13 +79,36 @@ WHERE sighting_id  IS NULL
 
 -- problem 6
 SELECT common_name, sighting_time, name FROM sightings
-JOIN species ON sightings.species_id = species.species_id 
-JOIN rangers ON sightings.ranger_id = rangers.ranger_id 
-ORDER BY sighting_time DESC 
-LIMIT 2
+    JOIN species ON sightings.species_id = species.species_id 
+    JOIN rangers ON sightings.ranger_id = rangers.ranger_id 
+    ORDER BY sighting_time DESC 
+    LIMIT 2
 
+-- Problem 7
 UPDATE species
 set conservation_status = 'Historic'
 WHERE extract(YEAR FROM discovery_date) < 1800
+
+
+-- Problem 8
+SELECT sighting_id, 
+    CASE
+    WHEN extract(HOUR FROM sighting_time) < 12 THEN 'Morning'
+    WHEN extract(HOUR FROM sighting_time)  BETWEEN  12 AND 17 THEN 'Afternoon'
+    ELSE 'Evening'
+    END
+    AS time_of_day
+FROM sightings
+
+-- Problem 9
+DELETE FROM rangers
+    WHERE ranger_id NOT IN  (
+        SELECT DISTINCT ranger_id FROM sightings
+    );
+
+
+
+
+
  
 
