@@ -1,19 +1,27 @@
 ### 1. What is PostgreSQL?
+- PostgreSql হলো রিলেশনাল ডাটাবেইজ মেনেজমেন্ট সিস্টেম এর মাধ্যমে Sql এর বিভিন্ন কোয়েরি সম্পন্ন করা যায়। এর মাধ্যমে ডাটা সিকিউরিটি নিশ্চিত করা যায়। ডেটার নির্ভর যোগ্যতা বজায় রাখা যায়। এটি সম্পূর্ন ফ্রী ব্যাবহার করা যায় |
 
 
 ### 2. What is the difference between the VARCHAR and CHAR data types?
+#### CHAR
+- Char এর মাধ্যমে নির্দিষ্ট ওয়ার্ড এর ডাটা নেওয়া যায়। 
+- Char(10) এর মাধ্যমে যদি ১০ ওয়ার্ড এর চেয়ে কম ডাটা দেওয়া হয় তাহলে যে পরিমাণ ওয়ার্ড কম থাকবে তা স্পেস দিয়ে দিবে ।
 
+##### VARCHAR
+- VARCGAR ব্যাবহার করলে ডাটার দৈর্ঘ্য পরিবর্তন হতে পারে।
+- Varchar(50) দিলে ৫০ ওয়ার্ড ডাটা নিতে পারবেন তবে কম নিলে ডাটার দৈর্ঘ্য কম থাকবে।
 
 ### 3. Explain the purpose of the WHERE clause in a SELECT statement.
-
+- Where ক্লজ এর মাধ্যমে টেবিল থেকে শর্ত সাপেক্ষে বিভিন্ন ডাটা বের করা যায়। Select statement এর মাধ্যমে কোনো ডাটা দেখা অথবা পরিবর্তন করার ক্ষেত্রে where ব্যাবহার করা হয়।
 
 ### 4. What are the LIMIT and OFFSET clauses used for?
-
+- Limit এবং Offset ক্লজ Sql এ ব্যাবহার করা হয় ফলাফল দেখার জন্য লিমিট এর মাধ্যমে নির্ধারণ করে দেওয়া যায় আপনি ফলাফল থেকে কতগুলো ডাটা দেখতে চান। Offset বলে দেয় কোন ইনডেক্স থেকে ফলাফল দেখানো শুরু করবে। Limit এবং Offset সাধারণত পেজিনেশন এর জন্য ব্যাবহার করা হয়।
 
 ### 5. How can you modify data using UPDATE statements?
-
-
-### 6. What is the significance of the JOIN operation, and how does it work in PostgreSQL?
-
-
-### 7. How can you calculate aggregate functions like COUNT(), SUM(), and AVG() in PostgreSQL?
+- SQL-এর UPDATE কমান্ড ব্যবহার করা হয় টেবিলে বিদ্যমান ডেটা পরিবর্তন করতে।
+```
+UPDATE students
+SET name = 'Obaidullah', age = 22
+WHERE id = 1;
+```
+- Update লিখে টেবিল নাম তারপর কি আপডেট করবে তা দিতে হবে তারপর where এর মধ্যে কন্ডিশন দিতে হবে
